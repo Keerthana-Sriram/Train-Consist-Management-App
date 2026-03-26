@@ -1,17 +1,15 @@
 # Train-Consist-Management-App
 
-# UC1-Initialize Train and Display Consist Summary
+# Use Case 2: Add Passenger Bogies to Train
 
-#  * Description:
-#        * This class represents the entry point of the Train Consist
-# Management Application.
-  
-#  * At this stage, the application:
-#  * - Creates an empty train consist
-# - Uses a dynamic List to store bogies
-# - Displays initial bogie count
-# - Prints the current state of the train
-#      * This use case introduces collection initialization and
-# basic program startup flow.
+#  Description:
+#        * This class demonstrates how passenger bogies can be managed dynamically using ArrayList operations.
+# At this stage, the application:
+# - Adds new bogies to the train
+# - Removes existing bogies
+# - Checks for bogie availability
+# - Displays the final consist
 
-# @version 1.0
+# This maps CRUD operations using ArrayList.
+
+# @version 2.0 */
