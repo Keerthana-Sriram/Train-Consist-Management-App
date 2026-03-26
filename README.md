@@ -1,15 +1,14 @@
 # Train-Consist-Management-App
 
-# Use Case 2: Add Passenger Bogies to Train
+# Use Case 3: Track Unique Bogie IDs
 
-#  Description:
-#        * This class demonstrates how passenger bogies can be managed dynamically using ArrayList operations.
+# Description:
+# This class ensures that duplicate bogie IDs are not added into the train formation using HashSet.
+
 # At this stage, the application:
-# - Adds new bogies to the train
-# - Removes existing bogies
-# - Checks for bogie availability
-# - Displays the final consist
+# - Stores bogie IDs
+# - Prevents duplicates automatically
+# - Displays unique bogie identifiers
 
-# This maps CRUD operations using ArrayList.
-
-# @version 2.0 */
+# This maps uniqueness validation using Set.
+# @version 3.0
