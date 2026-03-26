@@ -1,14 +1,17 @@
 # Train-Consist-Management-App
 
-# Use Case 3: Track Unique Bogie IDs
+# Use Case 4: Maintain Ordered Bogie Consist
 
 # Description:
-# This class ensures that duplicate bogie IDs are not added into the train formation using HashSet.
+#  * This class models the physical chaining of train bogies
+# using LinkedList for ordered operations.
 
 # At this stage, the application:
-# - Stores bogie IDs
-# - Prevents duplicates automatically
-# - Displays unique bogie identifiers
+# - Adds bogies in sequence
+# - Inserts bogies at specific positions
+# - Removes bogies from front and rear
+# - Displays updated train structure
 
-# This maps uniqueness validation using Set.
-# @version 3.0
+# This maps positional operations using LinkedList.
+
+# @version 4.0
