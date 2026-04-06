@@ -1,15 +1,14 @@
 # Train-Consist-Management-App
 
-# Use Case 2: Add Passenger Bogies to Train
-
-#  Description:
-#        * This class demonstrates how passenger bogies can be managed dynamically using ArrayList operations.
-# At this stage, the application:
-# - Adds new bogies to the train
-# - Removes existing bogies
-# - Checks for bogie availability
-# - Displays the final consist
-
-# This maps CRUD operations using ArrayList.
-
-# @version 2.0 */
+# Use Case 5: Preserve Insertion Order of Bogies
+#      * Description:
+#      * This class maintains the exact attachment order of bogies 
+# while also preventing duplicate entries using LinkedHashSet.
+#  * At this stage, the application:
+#  * - Attaches bogies in order
+# - Preserves insertion sequence
+# - Avoids duplicate bogies
+# - Displays final train formation
+#      * This maps ordered uniqueness using LinkedHashSet.
+# @author Developer
+# @version 5.0

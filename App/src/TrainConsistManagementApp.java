@@ -1,48 +1,53 @@
-/* MAIN CLASS - UseCase2TrainConsistMgmnt
+/**
 
-* Use Case 2: Add Passenger Bogies to Train
+        * =
 
-* Description:
-        * This class demonstrates how passenger bogies can be
-* managed dynamically using ArrayList operations.
+        * MAIN CLASS - UseCase5TrainConsistMgmnt
+*=
+
+        *
+        * Use Case 5: Preserve Insertion Order of Bogies
 *
-        * At this stage, the application:
-        * - Adds new bogies to the train
-* - Removes existing bogies
-* - Checks for bogie availability
-* - Displays the final consist
 
-* This maps CRUD operations using ArrayList.
+        * Description:
+        * This class maintains the exact attachment order of bogies
+* while also preventing duplicate entries using LinkedHashSet.
+        *
+        * At this stage, the application:
+        * - Attaches bogies in order
+* - Preserves insertion sequence
+* - Avoids duplicate bogies
+* - Displays final train formation
+*
+        * This maps ordered uniqueness using LinkedHashSet.
         *
 
-        * @author DeveLoper
-* @version 2.0 */
+        * @author Developer
+* @version 5.0
+        */
 
-import java.util.ArrayList;
-import java.util.List;
+
+
+import java.util.*;
 public class TrainConsistManagementApp {
     public static void main(String[] args) {
         //Welcome banner
-        System.out.println("===========================================");
-        System.out.println("=== UC2 - Add Passemger Bogies to Train ===");
-        System.out.println("===========================================");
+        System.out.println("========================================");
+        System.out.println("=== UC4 - Maintain Ordered Bogie IDs ===");
+        System.out.println("========================================");
 
-        List<String> passengerBogies = new ArrayList<>();
+        //create linked list
+        Set<String> formation = new LinkedHashSet<>();
 
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        //adding initial bogies
+        formation.add("Engine");
+        formation.add("Sleeper");
+        formation.add("Cargo");
+        formation.add("Guard");
+        formation.add("Sleeper"); //duplicates will be ignored
 
-        System.out.println("After adding Bogies:\nPassenger Bogies: "+passengerBogies+"\n");
-
-        passengerBogies.remove("AC Chair");
-
-        System.out.println("After Removing 'AC Chair': "+passengerBogies+"\n");
-
-        System.out.println("Checking if 'Sleeper Exists: \nContains Sleeper? : "+passengerBogies.contains("Sleeper"));
-
-        System.out.println("Final Train Passenger Consists: "+passengerBogies+"\n");
-
-        System.out.println("\nUC2 operations completed successfully.");
+        System.out.println("Final Train Consists:\n"+formation+"\n");
+        System.out.println("Note:\nLinkedHashSet preserves insertion order and removes duplicates automatically.");
+        System.out.println("UC5 formation setup completed.");
     }
 }
