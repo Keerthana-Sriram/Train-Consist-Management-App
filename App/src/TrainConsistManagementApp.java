@@ -1,48 +1,25 @@
-/* MAIN CLASS - UseCase2TrainConsistMgmnt
 
-* Use Case 2: Add Passenger Bogies to Train
-
-* Description:
-        * This class demonstrates how passenger bogies can be
-* managed dynamically using ArrayList operations.
-*
-        * At this stage, the application:
-        * - Adds new bogies to the train
-* - Removes existing bogies
-* - Checks for bogie availability
-* - Displays the final consist
-
-* This maps CRUD operations using ArrayList.
-        *
-
-        * @author DeveLoper
-* @version 2.0 */
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 public class TrainConsistManagementApp {
     public static void main(String[] args) {
         //Welcome banner
-        System.out.println("===========================================");
-        System.out.println("=== UC2 - Add Passemger Bogies to Train ===");
-        System.out.println("===========================================");
+        System.out.println("=============================================");
+        System.out.println("=== UC6 - Map Bpgie to Capacity (HashMap) ===");
+        System.out.println("=============================================");
 
-        List<String> passengerBogies = new ArrayList<>();
+        Map<String, Integer> bogieCapacity = new HashMap<>();
 
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        bogieCapacity.put("Sleeper",24);
+        bogieCapacity.put("AC Chair",120);
+        bogieCapacity.put("First Class",72);
+        bogieCapacity.put("Cargo",56);
 
-        System.out.println("After adding Bogies:\nPassenger Bogies: "+passengerBogies+"\n");
+        System.out.println("The set is: ");
+        for(String key : bogieCapacity.keySet()){
+            System.out.println(key+"->"+bogieCapacity.get(key));
+        }
 
-        passengerBogies.remove("AC Chair");
-
-        System.out.println("After Removing 'AC Chair': "+passengerBogies+"\n");
-
-        System.out.println("Checking if 'Sleeper Exists: \nContains Sleeper? : "+passengerBogies.contains("Sleeper"));
-
-        System.out.println("Final Train Passenger Consists: "+passengerBogies+"\n");
-
-        System.out.println("\nUC2 operations completed successfully.");
+        System.out.println("\nUC6 operations completed successfully.");
     }
 }
+
