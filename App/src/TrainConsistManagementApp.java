@@ -1,10 +1,16 @@
-import java.util.*;
+class InvalidCapacityException extends Exception {
+    public InvalidCapacityException(String message) {
+        super(message);
+    }
+}
 
 class PassengerBogie {
     private String name;
     private int capacity;
-
-    public PassengerBogie(String name, int capacity) {
+    public PassengerBogie(String name, int capacity) throws InvalidCapacityException {
+        if (capacity <= 0) {
+            throw new InvalidCapacityException("Capacity must be greater than zero");
+        }
         this.name = name;
         this.capacity = capacity;
     }
@@ -27,20 +33,18 @@ public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 
-        // 🔹 Step 1: Create list of passenger bogies
-        List<PassengerBogie> bogies = new ArrayList<>();
+        try {
 
-        bogies.add(new PassengerBogie("Sleeper", 72));
-        bogies.add(new PassengerBogie("AC Chair", 56));
-        bogies.add(new PassengerBogie("First Class", 24));
+            PassengerBogie sleeper = new PassengerBogie("Sleeper", 72);
+            System.out.println("Created: " + sleeper);
 
-        // 🔹 Step 2: Sort using Comparator (ascending order)
-        bogies.sort(Comparator.comparingInt(PassengerBogie::getCapacity));
+            PassengerBogie invalid = new PassengerBogie("AC Chair", 0);
+            System.out.println("Created: " + invalid); // won't execute
 
-        // 🔹 Step 3: Display sorted bogies
-        System.out.println("🚆 Bogies sorted by capacity (Ascending):");
-        for (PassengerBogie b : bogies) {
-            System.out.println(b);
+        } catch (InvalidCapacityException e) {
+            System.out.println("Error: " + e.getMessage());
         }
+
+        System.out.println("Program continues safely...");
     }
 }
