@@ -1,25 +1,43 @@
 
 import java.util.*;
+import java.util.stream.Collectors;
+class Bogie {
+    String name;
+    int capacity;
+
+    Bogie(String name, int capacity){
+        this.name = name;
+        this.capacity = capacity;
+    }
+}
+
 public class TrainConsistManagementApp {
     public static void main(String[] args) {
         //Welcome banner
-        System.out.println("=============================================");
-        System.out.println("=== UC6 - Map Bpgie to Capacity (HashMap) ===");
-        System.out.println("=============================================");
+        System.out.println("===================================================");
+        System.out.println("=== UC8 - Filter Passenger Bpgies Using Streams ===");
+        System.out.println("===================================================");
 
-        Map<String, Integer> bogieCapacity = new HashMap<>();
+        List<Bogie> bogies = new ArrayList<>();
 
-        bogieCapacity.put("Sleeper",24);
-        bogieCapacity.put("AC Chair",120);
-        bogieCapacity.put("First Class",72);
-        bogieCapacity.put("Cargo",56);
+        bogies.add(new Bogie("Sleeper",72));
+        bogies.add(new Bogie("AC Chair",56));
+        bogies.add(new Bogie("First Class",24));
+        bogies.add(new Bogie("General",90));
 
-        System.out.println("The set is: ");
-        for(String key : bogieCapacity.keySet()){
-            System.out.println(key+"->"+bogieCapacity.get(key));
+        System.out.println("ALL Bogies:");
+        for (Bogie b : bogies){
+            System.out.println(b.name+"->"+b.capacity);
         }
 
-        System.out.println("\nUC6 operations completed successfully.");
+        List<Bogie> filtered = bogies.stream().filter(b->b.capacity > 60).collect(Collectors.toList());
+
+        System.out.println("Filtered Bogies: ");
+        for(Bogie b : filtered){
+            System.out.println(b.name + "->"+b.capacity);
+        }
+
+        System.out.println("\nUC8 operations completed successfully.");
     }
 }
 
